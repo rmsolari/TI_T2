@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
   belongs_to :entry
-  validates :name, presence: true
+  validates :author, presence: true
   validates :body, presence: true
 end

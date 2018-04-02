@@ -10,7 +10,6 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.order('created_at DESC')
-
   end
 
   def show
