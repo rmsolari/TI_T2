@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.permit(:author, :body)
+      params.permit(:author, :comment)
     end
     def find_entry
 			@entry = Entry.find(params[:entry_id])
