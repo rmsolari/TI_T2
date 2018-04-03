@@ -16,11 +16,16 @@ class CommentsController < ApplicationController
       render status: :ok
     else
       render json: {comment: "not found"}, status: :not_found
+    end
   end
 
   def show
 		@comment = Comment.find(params[:id])
-		render status: :ok
+    if @comments
+      render status: :ok
+    else
+      render json: {comment: "not found"}, status: :not_found
+    end
 	end
 
   def destroy
