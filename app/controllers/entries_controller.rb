@@ -14,6 +14,11 @@ class EntriesController < ApplicationController
 
   def show
 		@entry = Entry.find(params[:id])
+    if @entry
+      render status: :ok
+    else
+      render json: @entry.errors, status: :not_found
+    end
 		#render json: {status: 'SUCCESS', message:'Loaded article', data:entry},status: :ok
 	end
 

@@ -12,6 +12,10 @@ class CommentsController < ApplicationController
 
   def index
     @comments = @entry.comments.order('created_at DESC')
+    if @comments
+      render status: :ok
+    else
+      render json: @comments.errors, status: :not_found
   end
 
   def show
