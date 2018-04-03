@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  put '/entries/:id/', to: 'entries#update_put'
-  patch 'entries/:id', to: 'entries#update_patch'
+  put '/news/:id/', to: 'entries#update_put'
+  patch 'news/:id', to: 'entries#update_patch'
   resources :entries, path: 'news' do
     put '/comments/:id/', to: 'comments#update_put'
     patch 'comments/:id', to: 'comments#update_patch'

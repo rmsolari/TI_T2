@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
     if @entry
       render status: :ok
     else
-      render json: @entry.errors, status: :not_found
+      render json: {entry: "not found"}, status: :not_found
     end
 		#render json: {status: 'SUCCESS', message:'Loaded article', data:entry},status: :ok
 	end

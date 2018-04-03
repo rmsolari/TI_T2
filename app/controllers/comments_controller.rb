@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     if @comments
       render status: :ok
     else
-      render json: @comments.errors, status: :not_found
+      render json: {comment: "not found"}, status: :not_found
   end
 
   def show
